@@ -2,33 +2,30 @@ import React from 'react'
 import { Container, AppDescription, Module } from './DashboardComponents'
 
 const Dashboard = () => {
-  return (
-	<Container>
-		<AppDescription>
-			Faculty Management System (FMS) is a basic tool, which can perform CRUD operations on the Faculty data. 
-		</AppDescription>
-		<Module>
-			Add Faculty
-		</Module>
+	return (
+		<Container>
+			<AppDescription>
+				Faculty Management System (FMS) is a basic tool, which can perform CRUD operations on the Faculty data.
+			</AppDescription>
 
-		<Module>
-			Remove Faculty
-		</Module>
+			<Module to='/addFaculty'>
+				Add Faculty
+			</Module>
 
-		<Module>
-			Modify Faculty Data
-		</Module>
+			<Module to='/removeFaculty'>
+				Remove Faculty
+			</Module>
 
-		<Module>
-			View All Faculty
-		</Module>
+			<Module to='/modifyFaculty'>
+				Modify Faculty Data
+			</Module>
 
-		<Module>
-			Logout
-		</Module>
+			<Module to='/viewFaculty'>
+				View All Faculty
+			</Module>
 
-	</Container>
-  )
+		</Container>
+	)
 }
 
 export default Dashboard

@@ -4,7 +4,7 @@ import { NavbarContainer, AppLogo, ButtonContainer, Button } from './NavbarCompo
 const Navbar = () => {
   return (
 	<NavbarContainer>
-		<AppLogo>
+		<AppLogo to="/">
 			Faculty Management
 		</AppLogo>
 		<ButtonContainer>

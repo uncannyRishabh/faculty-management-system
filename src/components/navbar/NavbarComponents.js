@@ -12,8 +12,9 @@ export const NavbarContainer = styled.div`
 	position: fixed;
 `
 
-export const AppLogo = styled.h3`
+export const AppLogo = styled(Link)`
 	color: #5a29e4;
+	text-decoration: none;
 	font-size: 24px;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	margin-inline: 24px;
@@ -27,6 +28,7 @@ export const ButtonContainer = styled.div`
 
 export const Button = styled(Link)`
 	padding-inline: 12px;
+	text-decoration: none;
 	box-shadow: 0px 4px 16px -4px #5a29e4;
     background: #5a29e4;
     color: #fff;
