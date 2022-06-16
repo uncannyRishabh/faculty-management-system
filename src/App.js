@@ -1,12 +1,8 @@
-import Login from './components/login';
-import SignUp from './components/signup';
+import Home from './components/home';
 
 function App() {
   return (
-	<div>
-		<Login/>
-		{/* <SignUp/> */}
-	</div>
+	<Home/>
   );
 }
 
