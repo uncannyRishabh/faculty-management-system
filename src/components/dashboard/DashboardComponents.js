@@ -8,6 +8,10 @@ export const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin-top: 85px;
+
+	@media (max-aspect-ratio: 9/16) {
+		overflow-y: scroll;
+	}
 `
 
 export const AppDescription = styled.h3`
@@ -53,4 +57,21 @@ export const FormContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 360px;
+`
+
+export const TableHeading = styled.th`
+	font-size: larger;
+	font-family: 'Poppins';
+	font-weight: 500;
+	padding-right: 28px;
+`
+
+export const TableContent = styled.td`
+	font-size: medium;
+	font-family: 'Poppins';
+	font-weight: 300;
+	padding: 20px;
+	padding-left: 0px;
+	padding-right: 28px;
+	text-align: center;
 `

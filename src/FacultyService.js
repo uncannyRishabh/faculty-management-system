@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FACULTY_API_BASE_URL = "http://localhost:8080/api/v1/faculties";
+const FACULTY_API_BASE_URL = "http://localhost:8081/";
 
 class FacultyService {
 
@@ -8,8 +8,8 @@ class FacultyService {
         return axios.get(FACULTY_API_BASE_URL);
     }
 
-    createFaculty(employee){
-        return axios.post(FACULTY_API_BASE_URL, employee);
+    createFaculty(faculty){
+        return axios.post(FACULTY_API_BASE_URL, faculty);
     }
 
     getFacultyById(employeeId){

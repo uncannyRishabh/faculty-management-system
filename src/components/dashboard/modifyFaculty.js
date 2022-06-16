@@ -1,92 +1,94 @@
 import { Button } from '@mui/material'
-import React from 'react'
-import { Container, Field, FormContainer, Heading } from './DashboardComponents'
+import { Container, Field, FormContainer, Heading, TableContent, TableHeading } from './DashboardComponents'
 
-const ModifyFaculty = ({ isLoggedIn }) => {
-	if (isLoggedIn)
-	return (
-		<Container>
-			<Heading>
-				Fill out the details to modify faculty data.
-			</Heading>
-			<form>
-				<FormContainer>
-					<Field
-						required
-						fullWidth
-						id="firstName"
-						label="First Name"
-						name="firstName"
-						autoComplete="First Name"
-					/>
-					<br />
+import React, { Component, useState } from 'react'
+import axios from 'axios'
 
-					<Field
-						required
-						fullWidth
-						id="lastName"
-						label="Last Name"
-						name="lastName"
-						autoComplete="Last Name"
-					/>
-					<br />
+class ModifyFaculty extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			data: []
+		}
+		this.editFaculty = this.editFaculty.bind(this);
+	}
 
-					<Field
-						required
-						fullWidth
-						id="emailID"
-						label="Email Address"
-						name="email"
-						autoComplete="email"
-					/>
-					<br />
+	componentDidMount() {
+		axios.get('http://localhost:8081/auth/view')
+			.then(response => {
+				this.setState({data : response.data})
+				console.log(this.data);
+			});
+	}
 
-					<Field
-						required
-						fullWidth
-						id="courseName"
-						label="Course Name"
-						name="courseName"
-					/>
-					<br />
+	updateFaculty() {
 
-					<Field
-						required
-						fullWidth
-						id="phoneNumber"
-						label="Phone Number"
-						name="phoneNumber"
-						autoComplete="Phone"
-					/>
-					<br />
+	}
 
-					<Field
-						required
-						fullWidth
-						id="salary"
-						label="Salary"
-						name="salary"
-					/>
+	editFaculty(id){
+        this.props.history.push(`/modifyFaculty/${id}`);
+    }
 
-					<Button
-						type="submit"
-						fullWidth
-						variant="contained"
-						sx={{ mt: 3, mb: 2 , height: '54px'}}
-					>
-						SAVE CHANGES
-					</Button>
+	changeFirstNameHandler= (event) => {
+        this.setState({firstName: event.target.value});
+    }
 
-				</FormContainer>
+    changeLastNameHandler= (event) => {
+        this.setState({lastName: event.target.value});
+    }
 
-			</form>
+    changeEmailHandler= (event) => {
+        this.setState({emailId: event.target.value});
+    }
+	
 
-		</Container>
-	)
-else
-	return (
-		<Container>YOU NEED TO LOGIN OR SIGNUP TO ACCESS</Container>
-	)
+	render() {
+		if (this.props.isLoggedIn)
+			return (
+				<Container >
+					<Heading className="text-center">Faculty List</Heading>
+					<br></br>
+					<div className="row">
+						<table className="table table-striped table-bordered">
+							<thead >
+								<tr>
+									<TableHeading> Faculty ID</TableHeading>
+									<TableHeading> Faculty First Name</TableHeading>
+									<TableHeading> Faculty Last Name</TableHeading>
+									<TableHeading> Faculty Email Id</TableHeading>
+									<TableHeading> Faculty Course</TableHeading>
+									<TableHeading> Faculty Salary</TableHeading>
+									<TableHeading> Faculty PhoneNo.</TableHeading>
+									<TableHeading> Action </TableHeading>
+								</tr>
+							</thead>
+							<tbody>
+								{
+									this.state.data.map(
+										data =>
+											<tr key={data.id}>
+												<TableContent> {data.id}</TableContent>
+												<TableContent> {data.firstName} </TableContent>
+												<TableContent> {data.lastName}</TableContent>
+												<TableContent> {data.emailId}</TableContent>
+												<TableContent> {data.course}</TableContent>
+												<TableContent> {data.salary}</TableContent>
+												<TableContent> {data.phoneNo}</TableContent>
+												<button onClick={ () => this.editFaculty(data.id)} className="btn btn-info">Update </button>
+											</tr>
+									)
+								}
+							</tbody>
+						</table>
+
+					</div>
+
+				</Container>
+			)
+		else
+			return (
+				<Container>YOU NEED TO LOGIN OR SIGNUP TO ACCESS</Container>
+			)
+	}
 }
-
 export default ModifyFaculty
