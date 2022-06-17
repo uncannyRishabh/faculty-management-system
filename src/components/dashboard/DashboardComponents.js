@@ -19,24 +19,28 @@ export const AppDescription = styled.h3`
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-size: 34px;
-	font-family: sans-serif;
-`
+	font-family: 'Secular One', sans-serif;
+	color: #0c0326;
+	`
 
 export const Module = styled(Link)`
 	width: 280px;
 	height: 220px;
 	text-decoration: none;
+	font-family: 'Poppins';
+	font-size: larger;
 	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: rgb(106, 55, 250);
+	background-color: rgb(134, 82, 250);
 	margin: 24px;
 	border-radius: 12px;
 	box-shadow: 0px 2px 6px 0px #fff;
 	transition: all 0.4s ease-in-out;
 
 	:hover {
+		background-color: rgb(84, 40, 240);
 		box-shadow: 0px 2px 6px 0px #6a37fa;
 	}
 `
@@ -64,6 +68,7 @@ export const TableHeading = styled.th`
 	font-family: 'Poppins';
 	font-weight: 500;
 	padding-right: 28px;
+	background-color: #d1cafc;
 `
 
 export const TableContent = styled.td`

@@ -23,7 +23,7 @@ const Home = () => {
 	return (
 		<div className='App'>
 			<BrowserRouter>
-				<Navbar />
+				<Navbar isLoggedIn={isLoggedIn}/>
 				<Routes>
 					<Route path="/" element={<Dashboard />} />
 					<Route path="/Login" element={<Login setLoginStatus={setLoginStatus}/>} />

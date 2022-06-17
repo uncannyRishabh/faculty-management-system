@@ -1,8 +1,15 @@
 import React from 'react'
 import { NavbarContainer, AppLogo, ButtonContainer, Button } from './NavbarComponents'
 
-const Navbar = () => {
-  return (
+const Navbar = ({isLoggedIn}) => {
+  if(isLoggedIn) return (
+	<NavbarContainer>
+		<AppLogo to="/">
+			Faculty Management
+		</AppLogo>
+	</NavbarContainer>
+  )
+  else return (
 	<NavbarContainer>
 		<AppLogo to="/">
 			Faculty Management

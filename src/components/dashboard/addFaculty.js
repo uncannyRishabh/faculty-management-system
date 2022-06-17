@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import FacultyService from '../../FacultyService'
 import { Container, Field, Heading, FormContainer } from './DashboardComponents'
 
-export default function AddFaculty() {
+export default function AddFaculty({isLoggedIn}) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -42,7 +42,7 @@ export default function AddFaculty() {
 
 	}
 
-		if (true) //isLoggedIn
+		if (isLoggedIn)
 			return (
 				<Container>
 					<Heading>

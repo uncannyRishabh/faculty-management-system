@@ -5,7 +5,7 @@ const Dashboard = () => {
 	return (
 		<Container>
 			<AppDescription>
-				Faculty Management System (FMS) is a basic tool, which can perform CRUD operations on the Faculty data.
+				Faculty Management System (FMS) is a basic tool, that can perform CRUD operations over Faculty data.
 			</AppDescription>
 
 			<Module to='/addFaculty'>

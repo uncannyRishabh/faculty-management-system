@@ -13,11 +13,13 @@ export const NavbarContainer = styled.div`
 `
 
 export const AppLogo = styled(Link)`
-	color: #5a29e4;
+	color: #1a0a4a;
 	text-decoration: none;
 	font-size: 24px;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	margin-inline: 24px;
+	font-weight: 700;
+	font-family: 'Poppins';
+	margin-left: 32px;
+	margin-right: 16px;
 `
 
 export const ButtonContainer = styled.div`
@@ -29,11 +31,17 @@ export const ButtonContainer = styled.div`
 export const Button = styled(Link)`
 	padding-inline: 12px;
 	text-decoration: none;
-	box-shadow: 0px 4px 16px -4px #5a29e4;
+	box-shadow: 0px 4px 16px -6px #5a29e4;
     background: #5a29e4;
     color: #fff;
+	font-family: 'Poppins';
 	padding: 1rem 3.5rem;
 	border-radius: 12px;
 	margin-right: 14px;
+	transition: all .3s ease-in-out;
 	cursor: pointer;
+
+	:hover {
+		box-shadow: 0px 4px 16px -2px #5a29e4;
+	}
 `
